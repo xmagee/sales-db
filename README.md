@@ -5,3 +5,4 @@
 Scripts to create example databases for small example projects.
 
 * [Microsoft Sql Server](scripts/mssql.sql)
+* [MySQL](scripts/mysql.sql)
