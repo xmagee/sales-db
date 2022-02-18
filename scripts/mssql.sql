@@ -2,13 +2,13 @@ USE master;
 
 CREATE DATABASE [SalesDB];
 
-USE DATABASE [SalesDB];
+USE [SalesDB];
 
 CREATE LOGIN [SalesDBSQLLogin] WITH PASSWORD = 'Password123';
 
 CREATE USER [SalesDBSQLUser] FOR LOGIN [SalesDBSQLLogin];
-EXEC sp_addrolemember N'db_datareader', N'SalesDB';
-EXEC sp_addrolemember N'db_datawriter', N'SalesDB';
+EXEC sp_addrolemember N'db_datareader', N'SalesDBSQLUser';
+EXEC sp_addrolemember N'db_datawriter', N'SalesDBSQLUser';
 
 CREATE TABLE [Roles] (
     [ID] INT IDENTITY(1,1) PRIMARY KEY,
