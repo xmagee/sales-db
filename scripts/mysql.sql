@@ -1,8 +1,13 @@
-USE master;
-
 CREATE DATABASE SalesDB;
 
 USE SalesDB;
+
+-- for example only, please use a good password in production!!
+SET GLOBAL validate_password.policy=LOW;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+
+CREATE USER 'salesuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+GRANT ALL ON `SalesDB`.* TO 'salesuser'@'localhost';
 
 CREATE TABLE `Roles` (
     `ID` INT PRIMARY KEY AUTO_INCREMENT,
